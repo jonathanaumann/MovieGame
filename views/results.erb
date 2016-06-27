@@ -1,0 +1,27 @@
+
+
+
+<p style="float:right"> Which of theses movies was made in the year <%= @answer1.year %>?</p>
+
+
+
+
+ 
+  
+    
+
+<ul>
+
+
+<form action="/answer" method="post">
+  <input type= "hidden" value= "<%=@answer1.year %>" name= "answer"
+      action="/answer" method="post">
+<% @POSTERS.each do |poster| %>
+<li>
+<button type="submit" name= "answer_user" value ="<%= poster.year %>" action="/answer">
+<img src="<%= poster.poster %>" width ="360" hieght="533"/>
+</button>
+</li>
+<% end %>
+      </form>
+</ul>
